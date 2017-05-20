@@ -9,10 +9,6 @@
 
     ./.build/debug/Itemize
 
-## Removal
-
-    make clean
-
 ## Notes
 Not a lot to it... Thumbs up. Optionals make things more interesting, but less crashy.
 
