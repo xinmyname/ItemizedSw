@@ -15,9 +15,7 @@ public class Slot:CustomStringConvertible {
         }
 
         var quantityText = ""
-        let text = self.quantity == 1
-            ? "\(item)"
-            : "\(item)s"
+        let text = "\(item)".pluralize(count: self.quantity)
 
         switch (self.quantity) {
             case 1: quantityText = "An"
