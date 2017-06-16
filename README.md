@@ -29,4 +29,8 @@ You have:
 
     .build/debug/Itemize
 
+## Testing
+
+	swift test
+
 ## Notes
