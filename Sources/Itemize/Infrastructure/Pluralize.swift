@@ -140,7 +140,7 @@ public class Pluralize {
     }
 }
 
-extension String {
+public extension String {
     
     public func pluralize(count: Int = 2) -> String {
         return Pluralize.sharedInstance.pluralOf(word: self, count: count)
