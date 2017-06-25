@@ -2,6 +2,10 @@ public class Inventory {
     
     private var _slots = [Descriptor:Slot]()
 
+    public init() {
+        
+    }
+
     public func add(item:Item) {
         
         let descriptor = item.descriptor
