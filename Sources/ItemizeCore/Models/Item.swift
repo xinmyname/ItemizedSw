@@ -1,8 +1,6 @@
 public class Item:CustomStringConvertible {
 
-	public var descriptor:Descriptor {
-		return Descriptor.default
-	}
+	public var descriptor = Descriptor()
 
 	public var description:String {
 		return "item"
