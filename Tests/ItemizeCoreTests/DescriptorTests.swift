@@ -54,6 +54,21 @@ class GivenAnEmptyDescriptor: XCTestCase {
     }
 }
 
+class GivenADescriptorWithANilIndex : XCTestCase {
+    
+    func testThatTheIndexIsNil() {
+        let d = Descriptor(string: "?")
+        let it = d.iterator
+        do {
+            let index:Int? = try it.next()
+            XCTAssertNil(index)
+        }
+        catch {
+            XCTFail()
+        }
+    }
+}
+
 class GivenADescriptorWithTwoIndices: XCTestCase {
     
     func testThatAnIndexIsAppended() {
