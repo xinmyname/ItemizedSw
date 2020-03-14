@@ -19,10 +19,9 @@ if CommandLine.arguments.count > 1 {
 }
 
 let inventory = Inventory()
-let itemFactory = ItemFactory()
 
 while count > 0 {
-    inventory.add(item:itemFactory.makeItem())
+    inventory.add(item:Item())
     count -= 1
 }
 
@@ -31,3 +30,6 @@ print("You have: ")
 for slot in inventory.slots {
     print("  \(slot)")
 }
+
+print()
+print("That's all you have.")
