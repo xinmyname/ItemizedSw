@@ -33,14 +33,6 @@ public class Item:CustomStringConvertible {
         }
     }
     
-    init(descriptor:Descriptor) {
-        self.descriptor = descriptor
-    }
-
-    public var kind:Kind {
-        return Kind(rawValue: self.descriptor[0])!
-    }
-    
     public var description: String {
         let it = self.descriptor.iterator
         
@@ -458,7 +450,7 @@ public class Item:CustomStringConvertible {
         "^kilogram"
     ]
     
-    public enum Kind:Int,CustomStringConvertible {
+    public enum Kind:Int {
         
         case weapon
 /*
@@ -481,31 +473,6 @@ public class Item:CustomStringConvertible {
         case book
         case utensil
 */
-        public var description:String {
-            switch self {
-            case .weapon: return "weapon"
-/*
-            case .armor: return "armor"
-            case .monsterPart: return "monster part"
-            case .tool: return "tool"
-            case .scroll: return "scroll"
-            case .wand: return "wand"
-            case .potion: return "potion"
-            case .amulet: return "amulet"
-            case .ring: return "ring"
-            case .bracelet: return "bracelet"
-            case .necklace: return "necklace"
-            case .staff: return "staff"
-            case .key: return "key"
-            case .ammunition: return "ammunition"
-            case .gemstone: return "gemstone"
-            case .ore: return "ore"
-            case .clothes: return "clothes"
-            case .book: return "book"
-            case .utensil: return "utensil"
-*/
-            }
-        }
         
         private static var _count:Int {
             get {
@@ -521,6 +488,4 @@ public class Item:CustomStringConvertible {
             return Kind(rawValue: Int(arc4random_uniform(UInt32(_count))))!
         }
     }
-
 }
-
