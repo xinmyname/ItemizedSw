@@ -11,6 +11,7 @@ import Foundation
 enum RandomNilStrategy {
     case never
     case equalChance
+    case probability(value:Float)
 }
 
 extension Array {
@@ -27,6 +28,11 @@ extension Array {
                 return nil
             }
             return self[idx]
+        case .probability(let value):
+            if Int(arc4random_uniform(100)) > Int(value * 100.0) {
+                return self[Int(arc4random_uniform(UInt32(self.count)))]
+            }
+            return nil
         }
     }
     
@@ -43,6 +49,11 @@ extension Array {
                 return nil
             }
             return idx
+        case .probability(let value):
+            if Int(arc4random_uniform(100)) > Int(value * 100.0) {
+                return Int(arc4random_uniform(UInt32(self.count)))
+            }
+            return nil
         }
     }
 }
