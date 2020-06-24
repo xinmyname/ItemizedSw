@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "AEF7BED3-C2A9-4474-B3BC-BFE332DA26FB",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:Itemize.xcodeproj",
+        "identifier" : "Itemize::ItemizeCoreTests",
+        "name" : "ItemizeCoreTests"
+      }
+    }
+  ],
+  "version" : 1
+}

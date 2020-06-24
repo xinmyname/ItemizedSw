@@ -19,8 +19,8 @@ class DescriptorInitializerTests: XCTestCase {
     }
     
     func testThatADescriptorIsMadeGivenOneIndexAndOneNilIndexAsAString() {
-        let d = Descriptor(string: "1-?")
-        XCTAssertEqual(d.description, "1-?")
+        let d = Descriptor(string: "1-0")
+        XCTAssertEqual(d.description, "1-0")
     }
     
     func testThatADescriptorIsMadeGivenSingleIndexAsAnArray() {
@@ -34,21 +34,21 @@ class DescriptorInitializerTests: XCTestCase {
     }
     
     func testThatADescriptorIsMadeGivenOneIndexAndOneNilIndexAsAnArray() {
-        let d = Descriptor(array: [1,-1])
-        XCTAssertEqual(d.description, "1-?")
+        let d = Descriptor(array: [1,0])
+        XCTAssertEqual(d.description, "1-0")
     }
 }
 
 class GivenAnEmptyDescriptor: XCTestCase {
     
     func testThatAnIndexIsAppended() {
-        let d = Descriptor()
+        var d = Descriptor()
         d.append(index: 0)
         XCTAssertEqual(d.description, "0")
     }
     
     func testThatANilIndexIsAppended() {
-        let d = Descriptor()
+        var d = Descriptor()
         d.append(index: nil)
         XCTAssertEqual(d.description, "?")
     }
@@ -72,15 +72,15 @@ class GivenADescriptorWithANilIndex : XCTestCase {
 class GivenADescriptorWithTwoIndices: XCTestCase {
     
     func testThatAnIndexIsAppended() {
-        let d = Descriptor(string: "1-2")
+        var d = Descriptor(string: "1-2")
         d.append(index: 3)
         XCTAssertEqual(d.description, "1-2-3")
     }
     
     func testThatANilIndexIsAppended() {
-        let d = Descriptor(string: "1-2")
+        var d = Descriptor(string: "1-2")
         d.append(index: nil)
-        XCTAssertEqual(d.description, "1-2-?")
+        XCTAssertEqual(d.description, "1-2-0")
     }
     
     func testThatAnIteratorContainsTwoItems() {
