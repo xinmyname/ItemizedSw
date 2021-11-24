@@ -10,7 +10,6 @@ public class Item:CustomStringConvertible {
         
         switch kind {
         case .weapon: self.makeWeapon()
-/*
         case .armor: self.makeArmor()
         case .monsterPart: self.makeMonsterPart()
         case .tool: self.makeTool()
@@ -29,7 +28,6 @@ public class Item:CustomStringConvertible {
         case .clothes: self.makeClothes()
         case .book: self.makeBook()
         case .utensil: self.makeUtensil()
-*/
         }
     }
     
@@ -41,7 +39,6 @@ public class Item:CustomStringConvertible {
 
             switch kind {
             case .weapon: return try self.describeWeapon(iterator:it)
-/*
             case .armor: return try self.describeArmor(iterator:it)
             case .monsterPart: return try self.describeMonsterPart(iterator:it)
             case .tool: return try self.describeTool(iterator:it)
@@ -60,7 +57,6 @@ public class Item:CustomStringConvertible {
             case .clothes: return try self.describeClothes(iterator:it)
             case .book: return try self.describeBook(iterator:it)
             case .utensil: return try self.describeUtensil(iterator:it)
-*/
             }
         }
         catch {
@@ -636,7 +632,7 @@ public class Item:CustomStringConvertible {
         let aspect = try iterator.nextOptionalItem(Item.Aspects)
         let color = try iterator.nextItem(Item.Colors)
         let clothing = try iterator.nextItem(Item.Clothes)
-        return "\(aspect) \(size) \(color) \(clothing)"
+        return "\(size) \(aspect) \(color) \(clothing)"
     }
     
     private func makeBook() {
@@ -1051,7 +1047,6 @@ public class Item:CustomStringConvertible {
     public enum Kind:Int {
         
         case weapon
-/*
         case armor
         case monsterPart
         case tool
@@ -1070,7 +1065,6 @@ public class Item:CustomStringConvertible {
         case clothes
         case book
         case utensil
-*/
         
         private static var _count:Int {
             get {

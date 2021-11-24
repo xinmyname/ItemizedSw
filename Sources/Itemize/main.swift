@@ -25,10 +25,6 @@ while count > 0 {
     count -= 1
 }
 
-for slot in inventory.slots {
-    slot.quantity =  Int(arc4random()%5) + 1
-}
-
 print("You have: ")
 
 for slot in inventory.slots {
